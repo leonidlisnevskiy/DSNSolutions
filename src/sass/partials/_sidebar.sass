@@ -1,0 +1,81 @@
+.sidebar
+	width: 100%
+	+r(768)
+		margin-bottom: 80px
+	.item
+		max-width: 300px
+		margin: 0 auto
+		&__image
+			height: 149px
+			+cover
+			+r(640)
+				height: 190px
+			&-text br
+				+r(640)
+					display: none
+	.main__title
+		margin-left: 0
+		+r(768)
+			display: none
+		p
+			margin-bottom: 12px
+.item
+	width: 100%
+	background-color: $white
+	padding: 13px 12px 24px
+	box-shadow: 0 2px 3px 0 rgba($black, .29)
+	+clr
+	position: relative
+	&__logo
+		background-color: $white
+		width: 84px
+		height: 83px
+		display: inline-block
+		padding: 14px 13px
+		position: absolute
+		top: -15px
+		border-radius: 3px
+		left: 22px
+		vertical-align: top
+		box-shadow: 0 2px 3px 0 rgba($black, .42)
+		overflow: hidden
+	&__logo img
+		max-width: 100%
+		height: auto
+	&__rate
+		float: right
+		margin-bottom: 16px
+	&__image
+		margin: 0 auto
+		width: 100%
+		display: inline-block
+		vertical-align: top
+		source
+			object-fit: cover
+	&__desc
+		display: inline-block
+		font-size: 0
+		width: 100%
+		padding: 0 10px 20px 10px
+		border-bottom: 1px solid rgba($black, .18)
+		p
+			+text-overflow
+			font-size: $text-sm //14px
+			color: rgba($black, .80)
+	&__loc
+		padding-top: 15px
+		i
+			margin-left: 14px
+			margin-right: 8px
+			display: inline-block
+			vertical-align: top
+			opacity: .80
+		p
+			font-size: $text-sm //14px
+			color: rgba($black, .70)
+			display: inline-block
+			vertical-align: top
+		p span
+			display: block
+			+r(640)
+				display: inline-block

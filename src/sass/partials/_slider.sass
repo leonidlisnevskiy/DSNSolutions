@@ -1,0 +1,77 @@
+// slider
+.slider
+	margin: 0 -8px
+	padding-top: 40px
+	width: auto
+	&-item
+		padding: 16px 8px
+	&-item .item
+		+r(640)
+			padding: 0
+		&__logo
+			+r(640)
+				width: 37px
+				height: 36px
+				padding: 6px
+				border-radius: 1px
+				top: 10px
+				left: 10px
+		&__desc
+			+r(640)
+				padding: 10px
+				border: none
+			p
+				+r(640)
+					display: none
+					font-size: 0
+			&-mq
+				display: none
+				font-size: 12px
+				+r(640)
+					display: inline-block
+
+		&__rate
+			+r(640)
+				display: none
+		&__loc
+			+r(640)
+				padding-top: 0
+				padding-bottom: 12px
+			p
+				+r(640)
+					font-size: 9px
+					vertical-align: middle
+		.form-check
+			+r(640)
+				display: none
+
+.owl
+	&-prev,
+	&-next
+		font-size: 0
+		width: 62px
+		height: 62px
+		text-align: center
+		position: absolute
+		top: 50%
+		display: inline-block
+		vertical-align: middle
+		line-height: 62px
+		background-color: $white
+		box-shadow: 0 2px 3px 0 rgba($black, .28)
+		border-radius: 3px
+		transition: background-color .24s ease-in-out, box-shadow .24s ease-in-out
+		&:hover
+			background-color: darken($white-bg, 10)
+			i
+				transform: translateX(-2px)
+		&:active
+			box-shadow: none
+		i
+			display: inline-block
+			vertical-align: middle
+			transition: transform .24s ease-in-out
+	&-prev
+		left: -73px
+	&-next
+		right: -73px

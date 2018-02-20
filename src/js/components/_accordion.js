@@ -1,0 +1,1 @@
+$('.js-collapse-container').collapse();

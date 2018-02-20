@@ -1,0 +1,125 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+{% include "partials/_header.html" %}
+
+<div class="hero" style="background-image: url('../img/bg-header.jpg');"></div>
+<!-- END .hero -->
+
+<main class="main">
+	<div class="content-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 order-md-1">
+					<aside class="sidebar">
+						<div class="main__title">
+							<p>Курсы</p>
+							<small>Английский язык</small>
+						</div>
+
+						<div class="item text-left">
+							<div class="item__logo"><img src="img/logo.jpg" alt=""></div>
+							<a href="#" class="item__rate">{{mixins.iconPng('star')}}</a>
+							<div class="item__image" style="background-image: url('img/photo.jpg');"></div>
+
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox" value="" checked="checked">
+									<span class="form-check-box"></span>
+									<span class="form-check-text">Школа <br/>«Let's Speak»</span>
+								</label>
+							</div>
+							<div class="item__desc">
+								<p>Репетиторы носители языка<br> главное наше преимущество</p>
+							</div>
+							<div class="item__loc">
+								{{mixins.iconPng('pin')}}
+								<p>Украина <span>Киев</span></p>
+							</div>
+						</div>
+					</aside>
+					<!-- END .sidebar -->
+				</div>
+
+				<div class="col-md-9">
+					<div class="main__title clearfix">
+						<div class="main__title-icon">{{mixins.iconPng('leaf')}}</div>
+						<div class="main__title-desc">
+							<p>Английский для детей</p>
+							<small>Лучше раньше, чем никогда</small>
+						</div>
+					</div>
+
+					<div class="js-collapse-container">
+						<div class="collapse__panel">
+							<a href="#example1" data-toggle="collapse" class="h4 clearfix"><span class="collapse__panel-icon">{{mixins.iconPng('hat')}}</span>В каком возрасте начать обучение? <span class="collapse__panel-caret float-right mt-2">{{mixins.iconPng('caret-top')}}</span></a>
+							<div class="collapse show collapse__content" id="example1">
+								<p>До пяти лет дети обладают лингвистической гениальностью. Они способны запоминать 20-30 новых слов в день. Простая арифметика дает впечатляющий результат – 7-10 тысяч слов в год. Да мы и в родном русском столько не используем, а что говорить об иностранном. Способности к языкам, безусловно, либо есть, либо нет.</p>
+							</div>
+						</div>
+
+						<div class="collapse__panel">
+							<a href="#example2" data-toggle="collapse" class="h4 clearfix"><span class="collapse__panel-icon">{{mixins.iconPng('hat')}}</span>В каком возрасте начать обучение? <span class="collapse__panel-caret float-right mt-2">{{mixins.iconPng('caret-top')}}</span></a>
+
+							<div class="collapse collapse__content" id="example2">
+								<p>До пяти лет дети обладают лингвистической гениальностью. Они способны запоминать 20-30 новых слов в день. Простая арифметика дает впечатляющий результат – 7-10 тысяч слов в год. Да мы и в родном русском столько не используем, а что говорить об иностранном. Способности к языкам, безусловно, либо есть, либо нет.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="title-sub">
+						<h3>Курсы английского в Киеве</h3>
+					</div>
+
+					<div class="owl-carousel slider">
+						{% for item in range(0,12) %}
+						<div class="slider-item">
+							<div class="item text-left">
+								<div class="item__logo"><img src="img/logo.jpg" alt=""></div>
+								<a href="#" class="item__rate">{{mixins.iconPng('star')}}</a>
+
+								<picture class="item__image"><source media="(max-width: 640px)" srcset="img/photo-mq.jpg">
+									<img src="img/photo.jpg" alt="">
+								</picture>
+
+								<div class="form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" type="checkbox"{% if loop.first %} disabled{% endif %}>
+										<span class="form-check-box"></span>
+										<span class="form-check-text">Школа <br/>«Let's Speak»</span>
+									</label>
+								</div>
+
+								<div class="item__desc">
+									<p>Репетиторы носители языка<br> главное наше преимущество</p>
+									<span class="item__desc-mq">Курсы английского в Киеве</span>
+								</div>
+
+								<div class="item__loc">
+									{{mixins.iconPng('pin')}}
+									<p>Украина <span>Киев</span></p>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<!-- END .owl-carousel -->
+				</div>
+			</div>
+		</div>
+		<!-- END .container -->
+	</div>
+	<!-- END .content-wrapper -->
+</main>
+<!-- END .main -->
+{% endblock %}
+
+

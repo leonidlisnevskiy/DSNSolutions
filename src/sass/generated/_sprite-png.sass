@@ -1,0 +1,105 @@
+$icons: (0:0)
+$icons: map-merge($icons,('caret-bottom': (X: -111px, Y:0px, W: 16px, H: 11px, TW: 127px, TH: 96px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('caret-next': (X: -84px, Y:-37px, W: 17px, H: 27px, TW: 127px, TH: 96px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('caret-prev': (X: -84px, Y:0px, W: 17px, H: 27px, TW: 127px, TH: 96px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('caret-top': (X: -74px, Y:-75px, W: 17px, H: 11px, TW: 127px, TH: 96px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('hat': (X: 0px, Y:0px, W: 32px, H: 33px, TW: 127px, TH: 96px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('leaf': (X: -42px, Y:0px, W: 32px, H: 32px, TW: 127px, TH: 96px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('magnify': (X: -48px, Y:-75px, W: 16px, H: 15px, TW: 127px, TH: 96px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('notification': (X: -34px, Y:-43px, W: 20px, H: 22px, TW: 127px, TH: 96px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('pin-red': (X: -24px, Y:-75px, W: 14px, H: 20px, TW: 127px, TH: 96px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('pin': (X: 0px, Y:-75px, W: 14px, H: 21px, TW: 127px, TH: 96px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('star': (X: 0px, Y:-43px, W: 24px, H: 22px, TW: 127px, TH: 96px, IMG: '../img/sprite.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+  $icon: map-get($icons, $icon)
+  @return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  width: icon-attr($iconName, W)
+  height: icon-attr($iconName, H)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  $width: icon-attr($iconName, W)
+  $height: icon-attr($iconName, H)
+  width: $width/2
+  height: $height/2
+  $x: icon-attr($iconName, X)
+  $y: icon-attr($iconName, Y)
+  background-position: $x/2 $y/2
+  $tw: icon-attr($iconName, TW)
+  $th: icon-attr($iconName, TH)
+  background-size: $tw/2 $th/2
+
+
+@mixin s($i)
+  +sprite($i)
+@mixin sp($i)
+  +sprite-position($i)
+@mixin sr($i)
+  +sprite-retina($i)
+
+i[class*="icon-"]
+  display: block
+
+.icon-caret-bottom
+  width: 16px
+  height: 11px
+  background-image: url('../img/sprite.png')
+  background-position: -111px 0px
+.icon-caret-next
+  width: 17px
+  height: 27px
+  background-image: url('../img/sprite.png')
+  background-position: -84px -37px
+.icon-caret-prev
+  width: 17px
+  height: 27px
+  background-image: url('../img/sprite.png')
+  background-position: -84px 0px
+.icon-caret-top
+  width: 17px
+  height: 11px
+  background-image: url('../img/sprite.png')
+  background-position: -74px -75px
+.icon-hat
+  width: 32px
+  height: 33px
+  background-image: url('../img/sprite.png')
+  background-position: 0px 0px
+.icon-leaf
+  width: 32px
+  height: 32px
+  background-image: url('../img/sprite.png')
+  background-position: -42px 0px
+.icon-magnify
+  width: 16px
+  height: 15px
+  background-image: url('../img/sprite.png')
+  background-position: -48px -75px
+.icon-notification
+  width: 20px
+  height: 22px
+  background-image: url('../img/sprite.png')
+  background-position: -34px -43px
+.icon-pin-red
+  width: 14px
+  height: 20px
+  background-image: url('../img/sprite.png')
+  background-position: -24px -75px
+.icon-pin
+  width: 14px
+  height: 21px
+  background-image: url('../img/sprite.png')
+  background-position: 0px -75px
+.icon-star
+  width: 24px
+  height: 22px
+  background-image: url('../img/sprite.png')
+  background-position: 0px -43px

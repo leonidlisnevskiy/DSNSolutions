@@ -1,0 +1,142 @@
+// Main
+.main
+	background-color: $white-bg
+	&__title
+		margin-bottom: 48px
+		margin-left: 48px
+		+r(640)
+			margin-left: 0
+			margin-bottom: 0
+			text-align: center
+		small
+			font-size: 14px
+			+r(640)
+				display: none
+		p, small
+			color: $white
+		p
+			margin-bottom: 0
+			font-size: 40px
+			+r(640)
+				font-size: 28px
+		&-icon
+			margin-top: 9px
+			margin-right: 24px
+			float: left
+			+r(640)
+				float: none
+				margin: 0 auto 30px
+			i
+				margin: 0 auto
+		&-desc
+			display: inline-block
+			+r(640)
+				margin-bottom: 58px
+			p
+				margin-bottom: 12px
+
+// Collapse
+.collapse
+	&__content
+		margin-top: 35px
+		padding: 0 25px 0 55px
+		+r(640)
+			padding: 0
+		p
+			font-size: $text-sm //14px
+			color: $black
+			line-height: 1.71
+	&__panel
+		background-color: $white
+		padding: 45px 50px 40px 50px
+		box-shadow: 0 2px 3px 0 rgba($black, .33)
+		margin-bottom: 24px
+		+r(640)
+			margin-bottom: 12px
+			padding: 40px 20px 70px
+		&-caret
+			transition: transform .24s ease-in-out
+			+r(640)
+				display: none
+		&-icon
+			display: block
+			float: left
+			margin-right: 24px
+			+r(640)
+				float: none
+				margin: 0 auto 24px
+			i
+				display: block
+				margin: 0 auto
+		a
+			display: block
+			text-decoration: none
+			+font-family($roboto-reg)
+			transition: color .24s ease-in-out
+			margin-bottom: 0
+			+r(640)
+				font-size: 22px
+				text-align: center
+			&[aria-expanded="true"]
+				.collapse__panel-caret
+					transform: rotateZ(180deg)
+		a:hover
+			text-decoration: none
+
+// Checkbox
+.form-check
+	padding: 20px 12px
+	&-label
+		color: $black
+		cursor: pointer
+		line-height: 1.33
+		display: inline-block
+		position: relative
+		vertical-align: top
+		+nosel
+		font-size: 0
+	&-text
+		font-size: $text-md //18px
+		display: inline-block
+		margin-left: 10px
+	&-box
+		width: 20px
+		height: 20px
+		background-color: $blue
+		border-radius: 3px
+		display: inline-block
+		position: absolute
+		top: 0
+		left: 0
+		vertical-align: top
+		&:after
+			content: ""
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			opacity: 0
+			width: 20px
+			transition: transform .24s ease-in-out, opacity .24s ease-in-out
+			height: 20px
+			transform: translateY(-100%)
+			background-image: url('../icons/check.svg')
+			+cover
+	&-input[type="checkbox"]
+		width: 20px
+		position: static
+		margin-top: 0
+		margin-left: 0
+		opacity: 0
+		overflow: hidden
+		height: 20px
+		display: inline-block
+		vertical-align: top
+		background-image: none
+		&:checked + span.form-check-box:after
+			transform: translateY(0)
+			opacity: 1
+	&-input[disabled] + span.form-check-box
+		background-color: lighten(rgba($black, .48), 10)
+		cursor: not-allowed
+
