@@ -1,9 +1,14 @@
 <header class="header">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-12">
-			</div>
-		</div>
+	<div class="header__logo">SITE LOGO <span class="header__logo-mq">ST</span></div>
+	<div class="header__user">
+		<a href="#">{{mixins.iconPng('notification')}}</a>
+		<a href="#" class="header__user-ava" style="background-image: url('http://placekitten.com/g/300/300');"></a>
+	</div>
+
+	<div class="header__search">
+		<div class="header__search-icon">{{mixins.iconPng('pin-red')}}</div>
+		<input type="text">
+		<button type="button" class="header__search-btn">{{mixins.iconPng('magnify')}}</button>
 	</div>
 </header>
 <!-- END .header -->
